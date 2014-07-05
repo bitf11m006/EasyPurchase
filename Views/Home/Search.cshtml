@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Search";
+}
+<h3>Search</h3>
+
+
+<!--- search and ads -->
+<div class="row">
+
+    <!-- left side -->
+    <div class="span3">
+        <div class="row-fluid">
+            <div class="span12  mySpan-top">
+                <h4 style="text-align: center; color: white;">Search</h4>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span12  mySpan-buttom">
+                <div class="container-fluid">
+                    <form onsubmit=" return Search()" id="formdata">
+                        <br>
+                        <label>KEYWORD</label>
+                        <input id="key" name="key" type="text" class="span12" placeholder="SEARCH SOMETHING…" required="required" onchange="createAutoComplete">
+                        <hr />
+                        <label>PRICE</label>
+                        <input id="from" name="from" class="span12" type="text" placeholder="FROM">
+                        <input id="to" name="to" class="span12" type="text" placeholder="TO">
+                        <hr />
+                        <label>SELECT CATAGORY</label>
+                        <select class="span12" name="catagory" id="catagory">
+                            <option value="all">ALL CATEGORIES</option>
+                            <option value="MOBILE">MOBILE</option>
+                            <option value="LAPTOPS">LAPTOPS</option>
+                            <option value="DESKTOP">DESKTOP</option>
+                            <option value="COMPUTER ACC.">COMPUTER ACC.</option>
+                            <option value="TABLETS">TABLETS</option>
+                            <option value="CAMERAS">CAMERAS</option>
+                            <option value="GAMING">GAMING</option>
+                            <option value="DEVICES">SOFTWARE</option>
+                            <option value="MOBILE ACC.">MOBILE ACC.</option>
+                            <option value="SERVICES">SERVICES</option>
+                        </select>
+                        <hr />
+                        <label>SELLER TYPE</label>
+                        <label class="radio">
+                            <input type="radio" name="radio1" id="both" value="All" checked="checked" />
+                            Both
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="radio1" id="indiv" value="Individual" />
+                            Individual
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="radio1" id="business" value="Business" />
+                            Business
+                        </label>
+                        <hr />
+                        <button type="submit" id="searchForm" class="btn">SEARCH</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- left side end -->
+
+    <!-- right side -->
+
+    <div class="span9">
+        <div class="row-fluid">
+            <div class="span12  mySpan-top">
+                <h4 id="AdsArea" style="text-align: center; color: white;">Recent Ads</h4>
+            </div>
+        </div>
+        <br />
+
+        <div id="list">
+            @Html.Partial("adView")
+        </div>
+
+    </div>
+</div>
+<!--- search and ads end -->
+

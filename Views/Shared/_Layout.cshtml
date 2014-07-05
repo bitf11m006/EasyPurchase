@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="keywords" content="Easy Purchase is a system where u can post ad and get your items sold quickly" />
+	<meta name="description" content="Easy Purchase is a system where u can post ad and get your items sold quickly." />
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1">
+    
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+	<link rel="stylesheet" href="~/Content/font-awesome.min.css">
+	<link rel="stylesheet" href="~/Content/templatemo_misc.css">
+	<link rel="stylesheet" href="~/Content/templatemo_style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+
+<body>
+    @RenderBody()
+
+    <div class="site-footer">
+			<div class="first-footer">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="social-footer">
+								<ul>
+									<li><a href="#" class="fa fa-facebook"></a></li>
+									<li><a href="#" class="fa fa-twitter"></a></li>
+									<li><a href="#" class="fa fa-dribbble"></a></li>
+									<li><a href="#" class="fa fa-linkedin"></a></li>
+									<li><a href="#" class="fa fa-rss"></a></li>
+								</ul>
+							</div> <!-- /.social-footer -->
+						</div> <!-- /.col-md-12 -->
+					</div> <!-- /.row -->
+				</div> <!-- /.container-fluid -->
+			</div> <!-- /.first-footer -->
+			<div class="bottom-footer">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-6">
+							<p class="copyright">Copyright © 2014 Bitf11m006 <a href="#">Easy Purchase | Aqsa Idrees </a>
+                            </p>
+						</div> <!-- /.col-md-6 -->
+						<div class="col-md-6 credits">
+							<p><a href="/Home/Index">Easy Purchase</a> by <a href="#Home">Bitf11m006</a></p>
+                            <!-- / please support templatemo.com by providing a credit link. thank you. / -->
+						</div> <!-- /.col-md-6 -->
+					</div> <!-- /.row -->
+				</div> <!-- /.container-fluid -->
+			</div> <!-- /.bottom-footer -->
+		</div> <!-- /.site-footer -->
+
+	</div> <!-- /#main-content -->
+
+	<!-- JavaScripts -->
+	<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+	<script src="~/Scripts/jquery.singlePageNav.js"></script>
+	<script src="~/Scripts/jquery.flexslider.js"></script>
+	<script src="~/Scripts/jquery.prettyPhoto.js"></script>
+	<script src="~/Scripts/custom.js"></script>
+	<script>
+	    $(document).ready(function () {
+	        $("a[data-gal^='prettyPhoto']").prettyPhoto({ hook: 'data-gal' });
+	    });
+
+	    function initialize() {
+	        var mapOptions = {
+	            zoom: 11,
+	            center: new google.maps.LatLng(16.8451789, 96.1439764)
+	        };
+
+	        var map = new google.maps.Map(document.getElementById('map-canvas'),
+                mapOptions);
+	    }
+
+	    function loadScript() {
+	        var script = document.createElement('script');
+	        script.type = 'text/javascript';
+	        script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' +
+                'callback=initialize';
+	        document.body.appendChild(script);
+	    }
+
+	    window.onload = loadScript;
+    </script>
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,80 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Login";
+}
+
+ @model project.Models.user
+
+
+@*<form name="Create Login" action="/Home/postAd" method="post">
+		<div align="center">
+            <h2>Login</h2>
+            <table>
+            <tr>
+                <td>
+			Username *:</td><td> <input type="text" name="Name" /><br/> </td>
+
+            </tr>
+                <tr>
+                    <td>
+             Email-Id *:</td>
+                    <td>
+                    <input type="text" name="Email-Id" /><br/>
+
+                    </td> 
+                    </tr>
+                <tr>
+                    <td>
+			Password *: </td>
+                    <td><input type="password" name="password" /><br/></td>
+                    </tr>
+ 
+		
+                </table>
+            <input type="submit" value="Login" />
+		</div>
+	</form>
+
+
+
+*@
+
+
+@using (Html.BeginForm("varify","Home", FormMethod.Post ))
+{
+     @Html.ValidationSummary(true)
+    @Html.AntiForgeryToken()
+    
+    <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+     
+     <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+     
+    
+    <div class="editor-label">
+            @Html.LabelFor(model => model.Email_Id)
+        </div>
+     
+     <div class="editor-field">
+            @Html.EditorFor(model => model.Email_Id)
+            @Html.ValidationMessageFor(model => model.Email_Id)
+        </div>
+    
+    
+       <div class="editor-label">
+            @Html.LabelFor(model => model.Password)
+        </div>
+    <div class="editor-field">
+            @Html.EditorFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+    
+   
+    
+    <input type="submit" value="Login" />
+
+}
